@@ -1,0 +1,32 @@
+<!-- Pass in data from server.js -->
+<ul>
+  {{#each burgers}}
+  	<li>
+  		<span class="label">{{this.id}}</span> 
+      <span class="label">{{this.name}}</span>
+
+      <button data-id="{{this.id}}" class="deleteBurger">Devour it!</button>
+  	</li>
+  {{/each}}
+</ul>
+
+<ul>
+  {{#each deletedBurgers}}
+  	<li>
+  		<p><span class="deleted">ID:</span> {{this.id}}</p>
+      <p><span class="deleted">Quote:</span> {{this.name}}</p>
+  	</li>
+  {{/each}}
+</ul>
+
+
+<form class="create-form">
+  <div class="form-group">
+    <textarea id="newBurger" name="new" rows="4" cols="40"></textarea>
+  </div>
+  <button type="submit">Submit</button>
+</form>
+
+
+
+<h5>Enter a burger you want to eat and Click the "Submit" button.</h5>
