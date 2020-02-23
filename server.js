@@ -1,13 +1,16 @@
 var exphbs = require("express-handlebars");
 var express = require("express");
 var orm=require("./config/orm");
+const path=require("path");
 
 
 
 var app = express();
 
 var PORT = process.env.PORT || 8080;
-app.use(express.static("public"));
+
+app.use(express.static(__dirname +"/public"));
+app.use(express.static(path.join(__dirname, '/public')));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -19,9 +22,7 @@ app.set("view engine", "handlebars");
 app.get("/", function(req, res) {
    orm.selectWhere("*", "burgers", "deleted is null", function(data1){
     orm.selectWhere("*", "burgers", "deleted='y'", function(data2){
-        console.log(data1);
-        console.log(data2);
-        res.render("index", { burgers:data1, deletedBurgers: data2 });
+        res.render("index", {burgers:data1, deletedBurgers: data2 });
        });
    });
 });
@@ -35,7 +36,6 @@ app.post("/api/burgers", function(req, res) {
 
 
 app.put("/api/burgers/:id", function(req, res) {
-    console.log("updating");
     orm.update("burgers", "deleted","y", req.params.id, function(data){
         res.status(200).end();
     })

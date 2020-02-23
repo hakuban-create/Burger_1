@@ -21,7 +21,6 @@ $(function() {
     $(".deleteBurger").on("click", function(event) {
       event.preventDefault();
       var id = $(this).data("id");
-      console.log("updateding to delete");
       $.ajax("/api/burgers/" + id, {
         type: "PUT",
       }).then(

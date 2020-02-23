@@ -1,0 +1,44 @@
+body{
+    background-color: lightgoldenrodyellow;
+}
+
+.image {
+    height: 180px;
+    width: 180px;
+    background: url(../../image/burger.png);
+    background-position: center;
+    background-size: cover;
+    margin-left: 27%;
+    margin-bottom: 20px;
+  }
+.container{
+    margin-left: 15%;
+    margin-top: 2%;
+}
+h2{
+    color: red;
+    margin-left: 25%;
+    margin-bottom: 100px;
+}
+.deleted{
+    color: gray;
+}
+.each_entry{
+    padding-right: 180px;
+    padding-left: 50px;
+}
+.new_items button{
+   float: right;
+}
+
+.each_entry{
+    margin-top: 10px;
+}
+.create-form{
+    margin-top: 50px;
+    margin-left: 18%;
+}
+.submit_btn{
+    margin-left: 35%;
+    margin-bottom: 10px;
+}
