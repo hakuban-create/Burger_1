@@ -41,6 +41,13 @@ app.put("/api/burgers/:id", function(req, res) {
     })
   });
 
+  app.delete("/api/burgers/:id", function(req, res) {
+    orm.delete("burgers", "id", req.params.id, function(data){
+        res.status(200).end();
+    })
+  });
+
+
 app.listen(PORT, function() {
   console.log("Server listening on: http://localhost:" + PORT);
 });

@@ -30,6 +30,19 @@ $(function() {
       );
     });
 
+    $(".archiveBurger").on("click", function(event) {
+      //event.preventDefault();
+      console.log("deleting");
+      var id = $(this).data("id");
+      $.ajax("/api/burgers/" + id, {
+        type: "DELETE",
+      }).then(
+        function() {
+          location.reload();
+        }
+      );
+    });
+
   
   });
   
