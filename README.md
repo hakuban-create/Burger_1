@@ -7,3 +7,5 @@
 * Each burger in the waiting area also has a `Devour it!` button. When the user clicks it, the burger will move to the right side of the page.
 
 * The app stores every burger in a database, whether devoured or not.
+
+https://burger1-83513.herokuapp.com/
